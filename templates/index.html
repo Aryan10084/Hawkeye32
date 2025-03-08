@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HawkEye 32 Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>HAWKEYE 32 CONTROL PANEL</h1>
+
+    <div class="container">
+        <!-- Live Camera Feed from Flask -->
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" class="live-feed">
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <button id="up" class="arrow up">▲</button>
+            <div class="mid-controls">
+                <button id="left" class="arrow left">◄</button>
+                <button id="stop" class="stop">■</button>
+                <button id="right" class="arrow right">►</button>
+            </div>
+            <button id="down" class="arrow down">▼</button>
+        </div>
+    </div>
+</body>
+</html>

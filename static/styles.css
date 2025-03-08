@@ -1,0 +1,103 @@
+/* Color Scheme */
+:root {
+    --rich-black: #001021;
+    --rich-black-2: #001625;
+    --gunmetal: #01222E;
+    --midnight-green: #02353B;
+    --neon-green: #00FFCC;
+}
+
+body {
+    background: linear-gradient(to right, var(--rich-black), var(--gunmetal));
+    color: var(--neon-green);
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 10px var(--neon-green);
+    margin: 20px 0;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    padding: 25px;
+}
+
+/* Live Feed */
+.video-container {
+    width: 50%;
+    text-align: center;
+}
+
+.live-feed {
+    width: 100%;
+    height: 550px;
+    border: 3px solid var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-green);
+    border-radius: 10px;
+    top: -20%
+}
+
+/* Control Panel */
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    position: relative; /* Enables precise positioning */
+    left: -100px; /* Moves it slightly to the left */
+    top: -30px
+}
+
+.mid-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Buttons */
+.arrow, .stop {
+    background: var(--midnight-green);
+    color: var(--neon-green);
+    font-size: 2.8em;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.stop {
+    background: red;
+    color: red;
+}
+
+.arrow:hover, .stop:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.arrow:active, .stop:active {
+    transform: scale(0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .video-container {
+        width: 100%;
+    }
+}
